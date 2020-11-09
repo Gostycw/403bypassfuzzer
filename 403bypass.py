@@ -11,11 +11,13 @@ def bypass(url,path):
     for i in range(0,12):
         if i < 9:
             r = requests.get(payloads[i])
+            if r.status_code == 200:
+                print(payloads[i])
         else:
             for j in range(0,3):
                 r = requests.get(url + '/' + path,headers=headerspayloads[j])
-        if r.status_code == 200:
-            print(i)
+                if r.status_code == 200:
+                    print(url + '/' + path + headerspayloads[j])
 
 if __name__ == '__main__':
     try:
